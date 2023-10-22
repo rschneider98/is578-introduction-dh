@@ -13,8 +13,6 @@ Hurston and Wright are both prominent African American writers and this article 
 
 ## 2) "Close- and Distant-Reading Modernism"
 
-Short summary: Goal, background, close-reading, voyant, gephi, conclusions
-
 Drouin performed a close and distant reading of the September 1918 issue of *The Little Review* which stood due to its seemingly uniqueness of dealing with death and WWI. The close reading of this issue follows tranditional literary techniques, but it is also combined with the distant reading of *The Little Review* issues from 1910 to 1922. This magazine also had a TEI edition that was able to be used in Voyant for word analysis. They also collected data in graduate student workshops to create a dataset based on a literary magazine's publications to link authors, works, genres, and topics. This dataset was used in Gephi to provide networking context to certain authors and topics. Some of the analysis showed that topics of death were associated to poetry instead of the short story genre, and that the short story group had a pronounced isolation in topics.
 
 
