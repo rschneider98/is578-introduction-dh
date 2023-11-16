@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Minimal Computing - IS578 - Assignment Static Site</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">IS578 - Assignment Static Site</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Digital Humanities <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../DH-Tools-Info/" class="dropdown-item">DigHum Tools</a>
+</li>
+                                    
+<li>
+    <a href="../DH-Tool/" class="dropdown-item">Palladio Tool</a>
+</li>
+                                    
+<li>
+    <a href="../DH-Text-Analysis/" class="dropdown-item">Text Analysis</a>
+</li>
+                                    
+<li>
+    <a href="../DH-Network-Analysis/" class="dropdown-item">Network Analysis</a>
+</li>
+                                    
+<li>
+    <a href="../DH-Mapping/" class="dropdown-item">Mapping</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Minimal Computing</a>
+</li>
+                                    
+<li>
+    <a href="../DH-Static-Website/" class="dropdown-item">Static Website</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../DH-Mapping/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../DH-Static-Website/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#minimal-computing" class="nav-link">Minimal Computing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="minimal-computing">Minimal Computing</h1>
+<p>I am evaluating Princeton Library's Blue Mountain Project. The project digitized issues of important periodicals of the European avant-garde and made them fully text searchable. The collection contains 3,747 issues comprising 80,953 pages and 93,148 articles.</p>
+<p>URL: <a href="https://bluemountain.princeton.edu/bluemtn/">https://bluemountain.princeton.edu/bluemtn/</a></p>
+<p>When I open the page, there is a website that appears, so at a minimum there is HTML and CSS in use here for this page.</p>
+<p><img alt="Landing page of Blue Mountain Project shows the Princeton Library Header with a search bar and a featured literary journal cover" src="../BlueMountainLanding.png" /></p>
+<p>At the bottom right of the page I notice the words "Powered by Veridian". Following the link to <a href="https://veridiansoftware.com/">Veridian</a> shows that they are a software company that creates content management systems designed for digital humanities, specifically for digitized archives and collections.</p>
+<p>Looking again at the main homepage, and clicking inspect-element on the search bar, I find that the search bar is a HTML form field with a submit button. This means that when I click the button, I am directed to a new page with my query in the HTTP request to load the new page. This means that the website is doing some preprocessing on the server-side to load the page before handing it off, but we can keep looking.</p>
+<p><img alt="Search bar with developer tools open showing the HTML form and submit button" src="../BlueMountainSearchInspect.png" /></p>
+<p>I switched the developer tools bar to the network tab so that my browser would track all of the requests that the website would send. Once there, I searched for "death" in the form. This lead to a new page in the URL (based on the HTML form GET submit button). The page had some parameters in the URL that specified the search criteria. URL: <a href="https://bluemountain.princeton.edu/bluemtn/?a=q&amp;hs=1&amp;r=1&amp;results=1&amp;txf=txIN&amp;txq=death&amp;e=-------en-20--1--txt-txIN-------">https://bluemountain.princeton.edu/bluemtn/?a=q&amp;hs=1&amp;r=1&amp;results=1&amp;txf=txIN&amp;txq=death&amp;e=-------en-20--1--txt-txIN-------</a> has the txq parameter equal to "death" which is what I searched for. Additionally in the network tab there is loading of CSS, JavaScript, and Image, but there are no other API calls that occur, which further suggests that this is a server compiling the HTML that I am viewing (as opposed to a static HTML site or a static site with JavaScript to load and create content). Looking at the "Veridian-Core.JS" shows that the underlying JavaScript is not minified and is written with JQuery, which makes usage of any JS framework unlikely.</p>
+<p><img alt="Network loading page from Chrome developer tools showing HTML, CSS, JS, and icons loading" src="../BlueMountainNetwork.png" /></p>
+<p>All in all, this is a moderately small webpage at 542kB and does not require the end user render the full webpage.</p>
+<p>Looking at the September 1916 issue of Der Sturm, the size of the network traffic quickly reached 1MB, which for most people is not an unreasonable size. Broadband minimal speeds of 25 Mbps can still easily get these archive materials, and even average DSL speeds of 10 Mbps are still happy with retrieving and displaying this content.</p>
+<ul>
+<li>From a digital accessibility standpoint, I think this site meets the goals of minimal computing since the end-user requirements are limited.</li>
+<li>From a maintenance perspective, this webpage looks like it requires funding from Princeton's library to maintain their contract with Veridian's content management system. Additionally they would also need to pay technical people to host the CMS internally or pay an external service to manage all of the changes. This does not meet some people's definition of "minimal computing" since it requires continued maintenance of servers and code. I would say that as long as the work is recognized, this can meet the goals of minimal computing.</li>
+<li>Finally, the collection is text searchable which is an additional computation, but this layer of computing provides new avenues for discoverability, which I think is a reasonable tradeoff and is part of what makes this a digital collection.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

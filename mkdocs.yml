@@ -1,0 +1,12 @@
+site_name: IS578 - Assignment Static Site
+
+nav:
+  - Home: index.md
+  - Digital Humanities:
+    - DigHum Tools: DH-Tools-Info.md
+    - Palladio Tool: DH-Tool.md
+    - Text Analysis: DH-Text-Analysis.md
+    - Network Analysis: DH-Network-Analysis.md
+    - Mapping: DH-Mapping.md
+    - Minimal Computing: DH-Minimal-Computing.md
+    - Static Website: DH-Static-Website.md
