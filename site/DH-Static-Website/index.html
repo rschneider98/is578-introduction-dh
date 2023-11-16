@@ -114,7 +114,16 @@
 <h1 id="static-websites">Static Websites</h1>
 <p>I decided to use MKdocs since I am more familiar with Python and this is what we use at work to create internal wikis. I have never set up a project for this or managed the configuration, so this will be a fun learning experience.</p>
 <p><a href="https://www.mkdocs.org/getting-started/">https://www.mkdocs.org/getting-started/</a></p>
-<p>I already have python installed so I can easily add this package: <code>python -m pip install mkdocs</code></p></div>
+<p>I already have python installed so I can easily add this package and use it.</p>
+<ul>
+<li><code>python -m venv .venv</code> Create python virtual environment</li>
+<li><code>source .venv/Scripts/activate</code> Start the virtual environment</li>
+<li><code>python -m pip install mkdocs</code> Install the Markdown Docs tool</li>
+<li><code>python -m mkdocs new .</code> Create a new project in my existing repo/folder</li>
+</ul>
+<p>I then moved all of the existing markdown files I had into the docs/ folder.
+In the mkdocs.yml, I can then register the different markdown files as locations on the site.</p>
+<p>And finally I get to build the markdown into a static site: <code>python -m mkdocs build</code></p></div>
             </div>
         </div>
 
